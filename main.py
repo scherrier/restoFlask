@@ -11,7 +11,7 @@ from database_setup import Restaurant, Base, MenuItem
 #Import end
 
 #Create DB session
-engine = create_engine('sqlite:///restaurantmenu.db')
+engine = create_engine('sqlite:///restaurantmenu.db', echo=True, connect_args={"check_same_thread": False})
 Base.metadata.bind = engine
 DBSession = sessionmaker(bind=engine)
 session = DBSession()
